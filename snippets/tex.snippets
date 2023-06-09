@@ -1,0 +1,63 @@
+#document framework
+snippet preamble
+	\documentclass[11pt]{article}
+
+	\usepackage{preamble}
+
+	\titleformat{\section}
+	{\Large\bfseries}
+	{}
+	{0em}
+	{}[\titlerule]
+
+	\titleformat{\subsection}
+	{\large\bfseries}
+	{}
+	{0em}
+	{}
+
+	\begin{document}
+		${0}
+	\end{document}
+
+#Codeblock no lines
+snippet code
+	\lstinputlisting[language=${1:C}, caption=${2:description}]{${3:file}}	${0}
+
+# Codeblock with lines
+snippet codel
+	\lstinputlisting[language=${1:C}, caption=${2:description}, firstline=${3:0}, lastline=${4:100}]{${5:file}}	${0}
+
+# Image
+snippet img
+	\begin{figure}[${1:H}]
+  		\centering
+  		\includegraphics[width=${2:3in}]{figures/${3}}
+  		\caption{\label{fig:${4}} ${5}}
+	\end{figure} ${0}
+
+snippet blockdiagram
+	 \begin{figure}[H]
+  		\centering
+  		\begin{center}
+  		  \begin{tikzpicture}[font=\small, thick, node distance=2cm]
+			${0}
+		  \end{tikzpicture}
+  		\end{center}
+  		\caption{\label{fig:${1}} ${2} }
+	\end{figure}
+
+snippet block
+	\node (${1:name}) [${2:process}, ${3:below} of=${4:start}] {${5}}; ${0}
+
+snippet line
+      \draw [arrow] (${1})--(${2}); ${0}
+
+snippet linet
+      \draw [arrow] (${1})-- node[anchor=${2:north}] {\textbf{${3}}} (${4}); ${0}
+
+snippet lineb
+      \draw [arrow] (${1})${2:--}(${3}); ${0}
+
+snippet linebt
+      \draw [arrow] (${1})${2:--} node[anchor=${3:north}] {\textbf{${4}}} (${5}); ${0}
